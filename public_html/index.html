@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>sha1</title>
+    <script>
+      
+      async function sha1() {
+        const textEncoder = new TextEncoder()
+        const txtEncode = textEncoder.encode(document.getElementById("inp").value);
+        const buffer = await crypto.subtle.digest('sha', txtEncode);
+        const hashArray = Array.from(new Uint8Array(buffer));
+        const hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        document.getElementById("inp").value = hash;
+        return hash;
+      }
+    </script>
+  </head>
+  <body>
+    <h4>liubov97</h4>
+    <input name="inp" id="inp" />
+    <button id="bt" name="bt" onclick="sha1()">Let's do it</button>
+  </body>
+</html>
