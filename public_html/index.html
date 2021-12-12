@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>sha1</title>
-    <script>
-     function send() {
+  </head>
+  <body>
+ 
+     <script>
+     function post() {
       document.getElementById("inp").value = SHA1(document.getElementById("inp").value);
     }
 
@@ -141,13 +144,9 @@
 
       return temp.toLowerCase();
     }
-
-
     </script>
-  </head>
-  <body>
     <h4>liubov97</h4>
     <input name="inp" id="inp" />
-    <button id="bt" name="bt" onclick="sha1()">Let's do it</button>
+    <button id="bt" name="bt" onclick="post()">Let's do it</button>
   </body>
 </html>
