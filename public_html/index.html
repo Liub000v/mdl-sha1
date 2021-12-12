@@ -6,7 +6,7 @@
     <script>
       
       async function sha1() {
-        const textEncoder = new TextEncoder()
+        const textEncoder = new TextEncoder();
         const txtEncode = textEncoder.encode(document.getElementById("inp").value);
         const buffer = await crypto.subtle.digest('sha', txtEncode);
         const hashArray = Array.from(new Uint8Array(buffer));
